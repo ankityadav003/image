@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize Image</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3c10be0ca5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1><i class="fa-solid fa-photo-film"></i> ImageTools</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Resize Image</a></li>
+            <li><a href="crop.html">Crop Image</a></li>
+            <li><a href="imgTopdf.html">Convert to PDF</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main class="tool-section">
+        <h3>Resize Your Image</h3>
+        <div class="upload-container">
+            <input type="file" accept="image/*" id="fileInput" onchange="previewImage(this)">
+            <div id="imagePreviewContainer" class="image-preview-container">
+                <img id="imagePreview" src="" alt="Preview of uploaded image" style="display: none;">
+            </div>
+            <div id="resizeControls" class="resize-controls" style="display: none;">
+                <label for="width">Width:</label>
+                <input type="number" id="width" min="1" placeholder="Width">
+                <label for="height">Height:</label>
+                <input type="number" id="height" min="1" placeholder="Height">
+                <button onclick="resizeImage()">Resize</button>
+            </div>
+        </div>
+
+        <!-- Resized Image Preview and Download Section -->
+        <div id="resizedPreview" style="display: none;">
+            <h4>Preview Resized Image</h4>
+            <img id="resizedImage" src="" alt="Resized Image Preview">
+            <button id="downloadBtn" onclick="downloadResizedImage()" style="display: none;">Download Resized
+                Image</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ImageTools | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Function to handle the image preview after file input
+        function previewImage(input) {
+            const file = input.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const imagePreview = document.getElementById('imagePreview');
+                imagePreview.src = e.target.result;
+                imagePreview.style.display = 'block';
+
+                // Show resize controls after an image is uploaded
+                document.getElementById('resizeControls').style.display = 'block';
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        // Function to resize the image based on user input
+        function resizeImage() {
+            const width = parseInt(document.getElementById('width').value);
+            const height = parseInt(document.getElementById('height').value);
+            const imagePreview = document.getElementById('imagePreview');
+
+            if (width && height) {
+                const resizedImage = document.getElementById('resizedImage');
+                resizedImage.src = imagePreview.src;
+                resizedImage.width = width;
+                resizedImage.height = height;
+
+                // Show the resized image preview and download button
+                document.getElementById('resizedPreview').style.display = 'block';
+                document.getElementById('downloadBtn').style.display = 'inline-block';
+            } else {
+                alert('Please enter valid width and height.');
+            }
+        }
+
+        // Function to download the resized image
+        function downloadResizedImage() {
+            const resizedImage = document.getElementById('resizedImage');
+            const link = document.createElement('a');
+            link.href = resizedImage.src;
+            link.download = 'resized_image.png';
+            link.click();
+        }
+
+    </script>
+
+
+</body>
+
+</html>

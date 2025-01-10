@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Image</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3c10be0ca5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1><i class="fa-solid fa-photo-film"></i> ImageTools</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Resize Image</a></li>
+            <li><a href="crop.html">Crop Image</a></li>
+            <li><a href="imgTopdf.html">Convert to PDF</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="tool-section">
+        <h3>Crop Your Image</h3>
+        <div class="upload-container">
+            <input type="file" accept="image/*" id="fileInput" onchange="previewImage(this)">
+            <div id="imagePreviewContainer" class="image-preview-container">
+                <!-- Canvas will show the image and cropping rectangle -->
+                <canvas id="cropCanvas"></canvas>
+            </div>
+            <div id="cropControls" style="display: none;">
+                <button onclick="cropImage()">Crop Image</button>
+            </div>
+        </div>
+
+        <!-- Cropped Image Preview and Download Section -->
+        <div id="croppedPreview" style="display: none;">
+            <h4>Preview Cropped Image</h4>
+            <img id="croppedImage" src="" alt="Cropped Image Preview">
+            <br>
+            <button id="downloadBtn" onclick="downloadCroppedImage()" style="display:none;">Download Cropped
+                Image</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ImageTools | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

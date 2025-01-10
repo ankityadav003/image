@@ -1,0 +1,173 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo h1 i {
+    margin-right: 10px;
+    color: #00b3ff;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    color: #00b3ff;
+
+}
+
+/* Main Section */
+.tool-section {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 3rem auto;
+    border-radius: 8px;
+    max-width: 700px;
+    min-height: 60vh;
+}
+
+.tool-section h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* File Inputs */
+input[type="file"] {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.6rem;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+input[type="file"]:hover {
+    /* border-color: #ff9800; */
+    border-color: #00b3ff;
+
+}
+
+/* Image Preview and Controls */
+#imagePreviewContainer {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#imagePreview {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resize-controls {
+    margin-top: 2rem;
+}
+
+.resize-controls label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.resize-controls input[type="number"] {
+    padding: 0.5rem;
+    width: 80px;
+    margin-right: 20px;
+    font-size: 1rem;
+}
+
+/* .resize-controls */
+button {
+    padding: 0.8rem 1.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* .resize-controls  */
+button:hover {
+    background-color: #00b3ff;
+
+}
+
+/* Resized Image Preview */
+#resizedPreview {
+    margin-top: 2rem;
+}
+
+#resizedImage {
+    max-width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+#downloadBtn {
+    padding: 1rem 2rem;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: none;
+}
+
+#downloadBtn:hover {
+    background-color: #00b3ff;
+
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.8rem;
+}
